@@ -1,13 +1,13 @@
-class Trainer{
-    constructor(name){
-    this.name = name
-    this.storage ={}
-    }
-    catch(pokemon){
-        this.storage[1]=pokemon
-          console.log(pokemon)
-    }
-  
+class Trainer {
+  constructor(name, store) {
+    this.name = name;
+    this.store = store;
+    this.storage = [];
+  }
+  catch(pokemon) {
+    this.storage.push(pokemon);
+    console.log(pokemon);
+  }
 }
 
-module.exports = Trainer
+module.exports = Trainer;
