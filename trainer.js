@@ -6,7 +6,6 @@ class Trainer {
   }
   catch(pokemon) {
     this.storage.push(pokemon);
-    console.log(pokemon);
   }
 }
 
