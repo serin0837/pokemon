@@ -38,6 +38,10 @@ describe.only("battle have fight method", () => {
     battle1.fight();
     expect(battle1.whoesturn).toBe(2);
     battle1.fight();
+    expect(battle1.whoesturn).toBe(1);
+    battle1.fight();
+    expect(battle1.whoesturn).toBe(2);
+    battle1.fight();
     // console.log(battle1, "<-battle1");
   });
   test("multiply depending on pokemons weakness and strength", () => {
@@ -45,14 +49,12 @@ describe.only("battle have fight method", () => {
     const serin = new Trainer("serin", "hug");
     const wartortle = new Wartortle();
     const charmander = new Charmander();
-    jack.catch(charmander);
-    serin.catch(wartortle);
+    jack.catch(wartortle);
+    serin.catch(charmander);
     const battle1 = new Battle(jack, serin);
-    //charmandor is attacker/wartortle is defender and charmander is weaker than tortle
+
     battle1.fight();
     console.log(battle1);
-    expect(wartortle.health).toEqual(81); //wartortlehealth-9(charmander damage(12) *0.75)
+    expect(charmander.health).toEqual(45);
   });
 });
-//why???????????????  initialise 1 ? why whoes turn 2??
-// wartortle is 78 health at the moment

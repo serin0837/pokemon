@@ -8,6 +8,7 @@ class Battle {
     this.fightpokemon1 = trainer1.storage[n || 0];
     this.fightpokemon2 = trainer2.storage[m || 0];
     this.whoesturn = 1;
+    this.round = 1;
   }
   fight() {
     let attacker;
@@ -37,7 +38,18 @@ class Battle {
     } else {
       multiplier = 1;
     }
-    defender.health -= attacker.damage * multiplier;
+    let attackerDamage = attacker.damage * multiplier;
+    defender.health -= attackerDamage;
+
+    let message;
+    if (defender.health > 0) {
+      message = `Round${this.round} : ${defender.name} is type of ${defender.type} and ${attacker.name} is type of ${attacker.type}
+      so  ${attacker.name} damaged to ${defender.name} with ${attackerDamage} points. ${defender.name} has ${defender.health} health left. `;
+    } else {
+      message = `${attacker.name} made ${defender.name} faint. The winner is ${attacker.name}!!!!`;
+    }
+    let result = message;
+    this.round++;
   }
 }
 module.exports = Battle;

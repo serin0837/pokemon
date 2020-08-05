@@ -17,12 +17,12 @@ class Pokemon {
 
 class Ivysaur extends Pokemon {
   constructor() {
-    super("Ivysaur", 80, 15, "Saurrr", "Whip Whip", "Grass");
+    super("Ivysaur", 80, 15, "Saurrr", "Whip Whip", "grass");
   }
 }
 class Wartortle extends Pokemon {
   constructor() {
-    super("Wartortle", 90, 20, "Wartotletotle", "Water gun", "Water");
+    super("Wartortle", 90, 20, "Wartotletotle", "Water gun", "water");
   }
 }
 class Charmander extends Pokemon {
