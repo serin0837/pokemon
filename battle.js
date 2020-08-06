@@ -1,4 +1,13 @@
-const { Pokemon, Ivysaur, Wartortle, Charmander } = require("./pokemon");
+const {
+  Pokemon,
+  Ivysaur,
+  Wartortle,
+  Charmander,
+  Chikorita,
+  Mudkip,
+  Charizard,
+} = require("./pokemon");
+
 const Trainer = require("./trainer");
 
 class Battle {
