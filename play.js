@@ -22,7 +22,6 @@ const pokemons = {
 };
 
 const arrayPokemons = Object.keys(pokemons);
-console.log(arrayPokemons);
 const trainers = [
   "Serin",
   "Jack",
@@ -86,9 +85,33 @@ const game = {
       .then((answers) => {
         const pokemon1 = pokemons[answers.catch];
         trainer1.catch(pokemon1);
-        console.log(`You got ${pokemon1.name} in your pokeball`);
-        const pokemon2 =
-          arrayPokemons[Math.floor(Math.random() * pokemons.length)];
+        console.log(`You have ${pokemon1.name} in your pokeball`);
+        const randomPoke =
+          arrayPokemons[Math.floor(Math.random() * arrayPokemons.length)];
+        const pokemon2 = pokemons[randomPoke];
+        trainer2.catch(pokemon2);
+        console.log(`${trainer2.name} have ${pokemon2.name} in pokeball`);
+        game.battle(trainer1, trainer2);
+      });
+  },
+  battle(trainer1, trainer2) {
+    inquirer
+      .prompt({
+        type: "confirm",
+        name: "battle",
+        message: "Are you ready to battle?",
+        default: true,
+      })
+      .then((answers) => {
+        if (answers.battle) {
+          const battle = new Battle(trainer1, trainer2);
+          while (
+            battle.fightpokemon1.health > 0 &&
+            battle.fightpokemon2.health > 0
+          ) {
+            battle.fight();
+          }
+        }
       });
   },
 };
