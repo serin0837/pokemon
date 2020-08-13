@@ -58,6 +58,7 @@ class Battle {
       message = `${attacker.name} made ${defender.name} faint. The winner is ${attacker.name}!!!!`;
     }
     let result = message;
+    console.log(result);
     this.round++;
   }
 }
