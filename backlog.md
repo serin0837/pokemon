@@ -1,2 +1,1 @@
-- battle.js
-  need to understand how to use inquirer
+- how to set up npm start to work with play.js

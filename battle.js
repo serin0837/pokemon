@@ -52,10 +52,12 @@ class Battle {
 
     let message;
     if (defender.health > 0) {
-      message = `Round${this.round} : ${defender.name} is type of ${defender.type} and ${attacker.name} is type of ${attacker.type}
-      so  ${attacker.name} damaged to ${defender.name} with ${attackerDamage} points. ${defender.name} has ${defender.health} health left. `;
+      message = `Round ${this.round} : 
+      ${attacker.name} damaged to ${defender.name} with ${attackerDamage} points. 
+      ${defender.name} has ${defender.health} health left. `;
     } else {
-      message = `${attacker.name} made ${defender.name} faint. The winner is ${attacker.name}!!!!`;
+      message = `Round ${this.round} : ${attacker.name} made ${defender.name} faint with ${attacker.move}.
+      The winner is ${attacker.name}!!!! "Game Over"`;
     }
     let result = message;
     console.log(result);
